@@ -1,0 +1,182 @@
+
+OpenMP programming.
+
+OUTLINE:
+
+1. Intro
+2. OpenMP Programming Model
+3. OpenMP Directives
+4. Synchronization Constructs
+5. Runtime Libraries
+6. Environment Variables.
+
+
+OpenMP Intro:
+	OpenMP is used for shared memory multi-processing.
+	The main goal is to utilize all cores of the multi-core CPU,
+	while simultaneously sharing memory among all the cores
+
+	Standard API for writing shared memory parallel applications in C, C++ and Fortran.
+
+	OpenMP API consists of:
+		-> Compiler Directives
+		-> Runtime Library Routines
+		-> Environment variables.
+
+	Specification maintained by the OpenMP Architecture Review Board
+	link: https://www.openmp.org
+	
+	Scenarios where we are going to use OpenMP
+		Creating new program
+		Parallelizing existing one
+
+	Use Explicit Parallelization - OpenMP
+		When compiler cannot find parallelism.
+
+
+	Characteristics of OpenMP Execution model:
+		Thread based parallelism
+		Explicit parallelism (Implicit vs Explicit Parallelization)
+		Fork-Join Model
+		Compiler Directive Based.
+
+
+	Difference Thread vs Process:
+	
+		A process is a program in execution. A thread is a light weight process.
+
+		Threads share the address space of the process that created it,
+		process have their own address procss.
+
+		Threads can comm directly with each other.
+		Process have to use IPC.
+
+	Fork-Join Model:
+		
+		
+                     ---
+	       fork/	\ join
+  main thread   ---	 -----
+                   \    /
+                    ---
+	
+	Memory model
+
+		Private or shared memory.
+		Synchronization.
+
+	
+
+=========================================
+
+
+Logged into Param Utkarsh:
+
+Created the first openmp program in file "openmp1.c"
+
+compile by using:
+
+$gcc -fopenmp openmp1.c
+$./a.out
+
+program:
+
+#include<stdio.h>
+#include<omp.h>
+
+int main(){
+        #pragma omp parallel
+        printf("Welcome to CDAC Bangalore\n");
+}
+
+This will print that statement "n" number of times, where n = number of CPU cores.
+
+You can increase or decrease number of threads based on your requirement,
+by changing the pre-processor directive:
+
+#pragma omp parallel num_threads (8)
+
+===============================================================
+
+Header file:
+
+	#include<omp.h>
+
+Parallel Region:
+		
+	#pragma omp parallel{
+		// parallel code
+	}
+
+
+Compilation:
+
+	GNU compiler Example:
+
+		gcc -o helloc.x -fopenmp hello.c
+
+	Other hardware specific compilers are also there and were given brief mention.
+	like: IBM, Intel, etc.
+
+OpenMP components:
+	
+	1. Compiler directives.
+		a. Parallel construct
+		b. Work Sharing
+		c. Synchronization
+		d. Data Scope
+			-> Private
+			-> Shared
+	2. Runtime Library routines
+		-> Number of threads
+		-> Thread ID
+	3. Environment variables.
+		-> Number of threads
+		-> Scheduling type
+
+
+OpenMP Compiler Directives:
+
+	-> Used to divide blocks of code among threads.
+	-> Distributing loop iterations among threads.
+	-> Serializing sections of code.
+	-> Synchronization of work among threads.
+
+Runtime Library Routines:
+
+	-> Setting and querying the number of threads.
+	-> Querying unique thread ID.
+	-> To check whether inside parallel region.
+
+=======================================================
+
+OpenMP Compiler Directives:
+
+	Syntax:
+		#pragma omp directive-name [clause1 clause2...]
+
+=======================================================
+
+Different ways of thread creations:
+
+	Number of threads in parallel region is determined by Order of precedence (Low-high)
+
+		1. Default number of threads (number of cores)
+		2. Setting of the OMP_NUM_THREADS environment variable
+		3. use of omp_set_num_threads()
+		4. Setting of NUM_THREADS clause
+	
+
+Work sharing constructs:
+
+Examples:
+
+	for
+	section
+	single - serializes a portion of code
+
+for directive:
+	divides loop iterations and execute in parallel.
+
+section:
+	
