@@ -1,0 +1,126 @@
+Shell scripting in Linux:
+
+	Difference between programming language vs scripting langauge:
+		programming lang = compiled
+		scripting lang = interpreted.
+
+	What is the point of shell scripting:
+		Automation of certain OS-level tasks.
+
+	Shebang line for bash shell script:
+	#!/bin/bash
+
+	for giving execute permissions to user:
+	$chmod u+x filename.sh
+
+	PATH Environment Variable:
+		
+		echo $PATH
+
+	Variables in Shell scripting and rules to create it.
+
+	double quotes strings allow variable resolution.
+
+	backquote is different than other single quote strings.
+	backquote does command resolution.
+	command resolution is also called command substitution.
+
+	read command.
+
+	Shell parameters:
+
+		Command line arguments in shell programs.
+		positional parameters in shell scripting.
+
+		eg:
+		$set blue green red yellow
+		$echo $1
+		$echo $2
+		$echo $#
+
+	Arithmetic expression:
+
+		An arithmetic expression can be evaluated by $[expression] or $((expression))
+		or "expr" command
+
+		For floating point arithmetic operations, we need to use a tool "bc (basic calculator)"
+
+		Available operators: +,-,/,*,%
+		
+		Task: 
+		Accept two numbers as input, perform +,-,/,*,% functions on them and print the output.
+
+	Control structures:
+
+		if then elif then else fi statement.
+			conditional statements inside []
+		
+	Expressions:
+
+		String comparisons:
+			= is for comparing (not ==)
+
+		Number comparisons:
+			-lt, -le, -gt, -gt, -eq
+
+	Instructor says:
+	if you are going to learn from slides, read the code and write your own code without seeing.
+	DONT COPY PASTE.
+
+	Logical Operators:
+		-a or && = logical AND
+		-o or || = logical OR
+		! = negation
+
+		
+	Case statement.
+
+		case $value in 
+			val_1) # code
+			val_2) # code
+		esac
+
+	while loop
+
+		while [ expression ]
+		do
+			statements
+		done	
+
+	until loop 
+		
+		until [ negative_expression ]
+		do
+			statement
+		done
+
+	for loop
+		
+		for var in list
+		do
+			statements
+		done
+
+
+		eg:
+
+		for num in 1 2 3 4 5
+		do
+			let "sum=$sum+$num"
+		done
+
+	C-like for loops
+
+	Using arrays with loops:
+		
+		for x in ${arrayname[*]}
+		do
+			statements
+		done
+
+	break and continue:
+		
+		-> Interupt for, while or until loop
+		-> The break statement.
+
+
