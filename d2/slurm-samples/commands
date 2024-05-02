@@ -1,0 +1,51 @@
+paramutkarsh.cdac.in
+
+ssh user@14.139.1.74 -p 4422
+
+ls /tmp/slurm-samples
+
+cp -r /tmp/slurm-samples ~/
+
+cd ~/slurm-samples
+
+ls
+
+sbatch test1.slurm
+
+ls -lrt
+
+squeue -u <username>
+
+
+sbatch test2.slurm
+
+cp test1.slurm test-sleep.slurm
+
+vi test-sleep.slurm
+
+sbatch test-sleep.slurm
+
+srun --nodes=1 --ntasks-per-node=1 --time=00:05:00 --pty bash
+
+mpicc
+
+module avail | grep openmpi
+
+ module load openmpi/4.1.1
+
+which mpicc
+
+echo $PATH
+echo $LD_LIBRARY_PATH
+
+module unload openmpi/4.1.1
+
+sbatch array-jobs.slurm
+
+sbatch -d afterok:<jobidA> JobB.slurm
+
+sbatch -d afterok:<jobidA> JobC.slurm
+
+sbatch -d afterok:<jobidB>:<jobidC> JobD.slurm
+
+
