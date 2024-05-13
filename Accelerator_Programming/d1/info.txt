@@ -1,0 +1,110 @@
+# Accelerator Programming:
+
+    ## Types of Accelerators:
+    - GPU
+    - FPGA 
+    - ASIC
+
+    ## What is a Accelerator:
+    
+        - Hardware Acceleration is the use of computer hardware designed to perform specific functions more efficiently, when compared to software running on a general-purpose central processing unit (CPU).
+
+        - Any software running on GPCPU can run on custom-made hardware.
+
+        - This custom-made hardware made for hardware acceleration are called Accelerators.
+
+    GPU:
+        - GPU = Graphics Processing Unit.
+        - Originally created for accelerating graphics rendering in video games.
+        - Now they are used in accelerating any task that can be parallelized.
+        - GPUs can have several cores (usually thousands).
+        - CPUs are optimized for serial computational workloads while GPUs are optimized for parallel computational workloads.
+        - Instructor says that concurrently means sequentially, the keyword is "PARALLELY".
+        - CPU has to be faster because its supposed to do a variety of tasks, which includes loading OS, dealing with RAM, device drivers, etc.
+    
+    FPGA:
+        - FPGA = Field Programmable Gate Arrays (FPGAs)
+        - Used to offload computationally intensive workloads from the main CPU, allowing it to focus on other tasks.
+        - FPGAs are modular. which means we can change its architecture as per the liking of the user.
+        - This is because they are "Programmable", this is unlike GPUs where we cannot change the architecture.
+        - Applications: financial modelling, scientific simulations, encryption/decryption, network traffic management, etc.
+        - financial trading and algorithmic trading where low latency is crucial.
+
+    FPGA Architecture:
+        - refer to the slides.
+        - DSP blocks = Digital Signal Processing blocks
+        - RAM blocks = Random Access Memory blocks
+
+    CPU:
+        - ALUs are the cores of both CPU and GPU.
+        - A Quad core CPU has 4 ALUs, each core will have control block and L1 Cache (The fastest cache inside the computer).
+        - Instructor says that the farther the cache is from the CPU the more power computer has to expend to access that memory. 
+        - This is why L1 cache is fastest.
+        - Similarly there is L2 Cache which is a little further from cores and L3 Cache is again more further from L2 Cache.
+        - And finally there is DRAM which is furthest memory block from cores inside the CPU.
+        - Caches stores some small amout of data in the form of pages.
+        - If there is a cache miss, then CPU has to go to RAM.
+
+    CPU strengths:
+        - large memory
+        - fast clock speed
+    weakness:
+        - low memory bandwidth
+        - low performace/watt
+        - expensive cache miss
+
+    GPU strenghts:
+        - high bandwidth memory
+        - more compute resources
+        - latency tolerant via parallelism
+        - high performance/watt
+    weakness:
+        - relatively low memory capacity
+        - low per thread performance.
+
+    Nvidia GPU Tesla V100:
+        - Tensor core can parallely execute matrix arithmetic (like addition, subtraction, multiplication, etc.)
+        - SFU and LDU is communicating data between Core so GPU and textual storage unit at the bottom.
+        - GPC = Graphics Processing cluster, this contains many GPU cards.
+        - tex = textual processing unit.
+        - HBM = High Bandwidth Memory
+        - NVLink is used for Nvidia's propreitary card for Nvidia compiler for nvCC for running the CUDA codes.
+        - CUDA code can be identified from "__global__" in the source code.
+
+    Other usecases of GPUs:
+        - GPUs are also used by Nvidia and other companies to make autonomous driving cars.
+        - This is because that task involves 360 degree videos and to speedup the processing it will require parallel computation.
+        - This is a realtime and critical application. Therefore, speedup is crucial and hence GPUs are necessary.
+
+
+    Tensor Processing Unit (TPU):
+        - A TPU is an accelerator designed by Google for accelerating machine learning (ML) workloads.
+        - They are custom-designed ASICs (Application-Specific Integrated Circuits) optimized for ML algorithms.
+        - They provide high performace and low power consumption.
+
+    TPU architecutre:
+        - refer slides.
+
+    TPU core components:
+        - matrix multiplier unit 
+        - Unified buffer
+        - activation Unit
+
+    Use case of Accelerators:
+        - Use of specialized hardware (Accelerator) to speed up work, often with parallel processing.
+
+    Programming on Accelerators:
+    - GPU:
+        - CUDA (proprietary by Nvidia)
+        - OpenACC (Open Source by Nvidia, helps developers develop application of their choice)
+        - SYCL (New entrant, can be used on any kind of hardware)
+    - FPGA:
+        - SYCL
+    - AI/ML:
+        - SYCL
+
+    - We will learn about SYCL more in-depth in these sessions.
+    - Instructor says, if you switch from Nvidia to AMD, CUDA and OpenACC wont work due to vendor lock-in.
+    - SYCL's motivation was that it helps port source code from one architecture to another.
+    - Apps like "final cut pro" use CUDA for parallel processing of video editing tasks.
+
