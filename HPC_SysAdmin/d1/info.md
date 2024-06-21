@@ -1,4 +1,4 @@
-# HPC System Administration
+# HPC System Administration (by Prof. Soundarya Rajan)
 
 ### Question: What are the components of a Data Center?
 
@@ -75,24 +75,67 @@
 3. Operating systems (low level)
 
 ## 0. Software stack for building applications:
-- scikit-learn, xgboost, pytorch, tensorflow, keras, numpy, pandas, matplotlib, seaborn, opencv
+- scikit-learn, 
+- xgboost, 
+- pytorch, 
+- tensorflow, 
+- keras, 
+- numpy, 
+- pandas, 
+- matplotlib, 
+- seaborn, 
+- opencv
 
 ## 1. HPC Programming tools:
-- Performance monitoring: HPCC, IMB/OSU, IOR, HPCG
-- Visualization: Ferret, GrADS, ParaView
-- Application libraries: NetCDF/HDF/etc., Math Libraries, Python Libraries, GNU Scientific Liberary
-- Development Tools: GNU, CUDA toolkit, OpenACC, Intel Cluster Studio
-- Communication Libraries: Intel MPI, OpenMPI, PGAS
+- Performance monitoring: 
+    - HPCC, 
+    - IMB/OSU, 
+    - IOR, 
+    - HPCG
+- Visualization: 
+    - Ferret, 
+    - GrADS, 
+    - ParaView
+- Application libraries: 
+    - NetCDF/HDF/etc., 
+    - Math Libraries, 
+    - Python Libraries, 
+    - GNU Scientific Liberary
+- Development Tools: 
+    - GNU, 
+    - CUDA toolkit, 
+    - OpenACC, 
+    - Intel Cluster Studio
+- Communication Libraries: 
+    - Intel MPI, 
+    - OpenMPI, 
+    - PGAS
 
 ## 2. Middleware Applications and Management
-- Cluster Monitoring / Help Desk: Ganglia, Nagios, C-DAC Tools, XDMoD, osTicket
-- Resource Managment/ Scheduling/ Accounting: SLURM, SLURM Accounting
-- Provisioning: OpenHPC (xCAT)
-- File System: NFS, Local FS (XFS), Lustre, GPFS
+- Cluster Monitoring / Help Desk: 
+    - Ganglia, 
+    - Nagios, 
+    - C-DAC Tools, 
+    - XDMoD, 
+    - osTicket
+- Resource Managment/ Scheduling/ Accounting: 
+    - SLURM, 
+    - SLURM Accounting
+- Provisioning: 
+    - OpenHPC (xCAT)
+- File System: 
+    - NFS, 
+    - Local FS (XFS), 
+    - Lustre, 
+    - GPFS
 
 ## 3. Operating Systems
-- Drivers: OFED, CUDA, Network and Storage Drivers
-- OS: Linux (CentOS 7.x)
+- Drivers: 
+    - OFED, 
+    - CUDA, 
+    - Network and Storage Drivers
+- OS: 
+    - Linux (CentOS 7.x)
 
 
 ## Other Tools:
