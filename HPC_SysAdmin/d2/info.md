@@ -180,5 +180,54 @@
 ## Access remote HPC Cluster
 - How to login to PARAM Utkarsh (refer slides)
 
+# SLURM
+
 ## Job Scheduler - SLURM
-- 
+- refer slides
+
+## SLURM Commands
+- refer slides 
+
+## Running jobs
+- refer slides
+
+## Compiling and executing the program
+- refer slides
+
+## Job script to run in CPU nodes
+- very important to specify wall time in HH:MM:SS, max value is 72:00:00
+
+## What is SLURM
+- SLURM is open source, fault-tolerant, highly scalable cluster management tool.
+- refer slides
+
+## History...
+- Slurm was developed in C (500,000 lines)
+- refer slides.
+
+## SLURM components
+- refer slides
+
+## SLURM Architecture
+- refer slides
+
+## Resources managed by SLURM
+- refer slides
+
+## SLURM commands demo
+
+## Question: What will you do if a node stops responding?
+- Every server gets a Internet protocol management interface port.
+- You will have an IP of that server.
+- You will go to the IPMI port 
+
+## Instructor says a field trip to PARAM Utkarsh might be arranged.
+
+## Assignment 
+- HPL Linpack benchmark and nagios monitoring on local system.
+- just google how to install and use.
+- on linux based os.
+
+## Instructor email id: 
+- Instructor name: Shreekant 
+- Email: sreek@cdac.in
